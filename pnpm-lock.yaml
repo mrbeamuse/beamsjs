@@ -1,0 +1,40 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@types/node':
+        specifier: ^20.5.7
+        version: registry.npmmirror.com/@types/node@20.5.7
+      typescript:
+        specifier: ^5.2.2
+        version: registry.npmmirror.com/typescript@5.2.2
+
+  packages/core:
+    dependencies:
+      '@beamjs/shared':
+        specifier: workspace:^
+        version: link:../shared
+
+  packages/shared: {}
+
+packages:
+
+  registry.npmmirror.com/@types/node@20.5.7:
+    resolution: {integrity: sha512-dP7f3LdZIysZnmvP3ANJYTSwg+wLLl8p7RqniVlV7j+oXSXAbt9h0WIBFmJy5inWZoX9wZN6eXx+YXd9Rh3RBA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-20.5.7.tgz}
+    name: '@types/node'
+    version: 20.5.7
+    dev: true
+
+  registry.npmmirror.com/typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/typescript/-/typescript-5.2.2.tgz}
+    name: typescript
+    version: 5.2.2
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
