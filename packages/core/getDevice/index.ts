@@ -1,4 +1,4 @@
-import { isString } from "@beamjs/shared";
+import { isString } from '@beamjs/shared';
 
 export const DEVICES = [
   {
@@ -8,7 +8,7 @@ export const DEVICES = [
       /samsung[- ]([-\w]+)/i,
       /sec-(sgh\w+)/i,
     ],
-    vendor: "Samsung",
+    vendor: 'Samsung',
   },
   {
     regs: [
@@ -17,11 +17,11 @@ export const DEVICES = [
       /applecoremedia\/[\w\.]+ \((ipad)/i,
       /\b(ipad)\d\d?,\d\d?[;\]].+ios/i,
     ],
-    vendor: "Apple",
+    vendor: 'Apple',
   },
   {
     regs: [/(pixel c)\b/i, /droid.+; (pixel[\daxl ]{0,6})(?: bui|\))/i],
-    vendor: "Google",
+    vendor: 'Google',
   },
   {
     regs: [
@@ -29,7 +29,7 @@ export const DEVICES = [
       /(?:huawei|honor)([-\w ]+)[;\)]/i,
       /\b(nexus 6p|\w{2,4}e?-[atu]?[ln][\dx][012359c][adn]?)\b(?!.+d\/s)/i,
     ],
-    vendor: "Huawei",
+    vendor: 'Huawei',
   },
   {
     regs: [
@@ -40,24 +40,24 @@ export const DEVICES = [
       /\b(mi[-_ ]?(?:a\d|one|one[_ ]plus|note lte|max|cc)?[_ ]?(?:\d?\w?)[_ ]?(?:plus|se|lite)?)(?: bui|\))/i, // Xiaomi Mi
       /\b(mi[-_ ]?(?:pad)(?:[\w_ ]+))(?: bui|\))/i, // Mi Pad tablets
     ],
-    vendor: "Xiaomi",
+    vendor: 'Xiaomi',
   },
   {
     regs: [
       /; (\w+) bui.+ oppo/i,
       /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i,
     ],
-    vendor: "OPPO",
+    vendor: 'OPPO',
   },
   {
     regs: [/vivo (\w+)(?: bui|\))/i, /\b(v[12]\d{3}\w?[at])(?: bui|;)/i],
-    vendor: "Vivo",
+    vendor: 'Vivo',
   },
   {
     regs: [
       /(Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i,
     ],
-    vendor: "other",
+    vendor: 'other',
   },
 ];
 
@@ -68,8 +68,8 @@ export const DEVICES = [
  */
 export const getDevice = (ua?: string) => {
   const device = {
-    model: "",
-    vendor: "",
+    model: '',
+    vendor: '',
   };
 
   if (!isString(ua)) {
@@ -79,8 +79,8 @@ export const getDevice = (ua?: string) => {
     ua = window.navigator.userAgent;
   }
 
-  device.model = "pc";
-  device.vendor = "other";
+  device.model = 'pc';
+  device.vendor = 'other';
 
   for (let i = 0; i <= DEVICES.length; i++) {
     if (!DEVICES[i]) break;
@@ -89,7 +89,7 @@ export const getDevice = (ua?: string) => {
     const findVal = regs.find((item) => item.exec(ua as string));
 
     if (findVal) {
-      device.model = "mobile";
+      device.model = 'mobile';
       device.vendor = vendor;
       break;
     }
