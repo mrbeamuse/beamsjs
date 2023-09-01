@@ -3,5 +3,6 @@ node_modules
 coverage
 !.vitepress/
 !.changeset/
+!.eslintrc.js
 pnpm-lock.yaml
 playgrounds/
