@@ -9,6 +9,7 @@ dist
 node_modules
 types
 coverage
+pnpm-lock.yaml
 
 # 文件
 .changeset/pre.json
