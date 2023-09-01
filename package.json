@@ -9,7 +9,9 @@
     "format": "prettier --write --cache .",
     "prepare": "husky install",
     "test": "vitest test",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "docs:dev": "vitepress dev packages",
+    "docs:build": "vitepress build packages"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +31,7 @@
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2",
+    "vitepress": "1.0.0-rc.10",
     "vitest": "^0.34.3"
   },
   "lint-staged": {
