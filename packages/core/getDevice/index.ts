@@ -1,4 +1,4 @@
-import { isString } from '@beamjs/shared';
+import { isString } from '@beamsjs/shared';
 
 export const DEVICES = [
   {
